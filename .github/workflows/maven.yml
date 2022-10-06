@@ -24,3 +24,5 @@ jobs:
         cache: maven
     - name: Maven Build
       run: mvn clean install --file ./CA1/
+    - name: Run Tests
+      run: mvn test --file ./CA1/
