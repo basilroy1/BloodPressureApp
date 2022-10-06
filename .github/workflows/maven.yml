@@ -23,4 +23,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Maven Build
-      run: mvn -f /CA1/../ --file pom.xml
+      run: mvn -B package --file ./CA1/pom.xml
