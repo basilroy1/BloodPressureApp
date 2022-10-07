@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
-public class BusinessLogicTests {
+ class BusinessLogicTests {
   @InjectMocks
   private BusinessLogic businessLogic;
 
