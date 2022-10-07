@@ -59,13 +59,13 @@ public class MainView extends VerticalLayout {
     horizontalLayout.getStyle().set("margin","auto");
     add(horizontalLayout);
 
-    Button calculate_bp = new Button("Calculate BP");
-    calculate_bp.getStyle().set("color","black");
-    calculate_bp.getStyle().set("margin","auto");
+    Button calculateBP = new Button("Calculate BP");
+    calculateBP.getStyle().set("color","black");
+    calculateBP.getStyle().set("margin","auto");
 
-    add(calculate_bp);
+    add(calculateBP);
 
-    calculate_bp.addClickListener(click -> {
+    calculateBP.addClickListener(click -> {
 
      String res = BusinessLogic.checkBloodPressureStatus(
          (systolicValue.getValue()),diastolicValue.getValue());
@@ -90,7 +90,7 @@ public class MainView extends VerticalLayout {
     dialog.getFooter().add(cancelButton);
     add(cancelButton);*/
     });
-    calculate_bp.addClickShortcut(Key.ENTER);
+    calculateBP.addClickShortcut(Key.ENTER);
     Chart chart = new Chart(ChartType.BAR);
     chart.setWidth("400px");  // 100% by default
     chart.setHeight("300px"); // 400px by default
