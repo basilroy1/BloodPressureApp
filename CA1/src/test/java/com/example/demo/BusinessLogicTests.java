@@ -25,18 +25,18 @@ import org.springframework.boot.test.context.SpringBootTest;
   }
   @Test
   void checkInValidSystolicRange(){
-    String res = BusinessLogic.checkSystolicAndDiastolicIsInAllowedRange(50,90);
+    String res = BusinessLogic.checkSystolicAndDiastolicIsInAllowedRange(10,40);
     Assertions.assertEquals(BloodPressureConstants.INVALID_SYSTOLIC,res);
   }
   @Test
   void checkInValidDiastolicRange(){
-    String res = BusinessLogic.checkSystolicAndDiastolicIsInAllowedRange(70,130);
+    String res = BusinessLogic.checkSystolicAndDiastolicIsInAllowedRange(75,130);
     Assertions.assertEquals(BloodPressureConstants.INVALID_DIASTOLIC,res);
   }
   @Test
   void checkValidDiastolicandSystolicRange(){
     String res = BusinessLogic.checkSystolicAndDiastolicIsInAllowedRange(75,90);
-    Assertions.assertEquals("Values are Perfect !",res);
+    Assertions.assertEquals("Values are In-Range !",res);
   }
   @Test
   void checkBPStatusisLOW(){
@@ -49,8 +49,33 @@ import org.springframework.boot.test.context.SpringBootTest;
     Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
   }
   @Test
+  void checkBPStatusisIDEAL2(){
+    String res = BusinessLogic.checkBloodPressureStatus(88,75);
+    Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
+  }
+  @Test
+  void checkBPStatusisIDEAL3(){
+    String res = BusinessLogic.checkBloodPressureStatus(115,55);
+    Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
+  }
+  @Test
   void checkBPStatusisPREHIGH(){
     String res = BusinessLogic.checkBloodPressureStatus(130,85);
+    Assertions.assertEquals(BloodPressureConstants.PREHIGH,res);
+  }
+  @Test
+  void checkBPStatusisPREHIGH2(){
+    String res = BusinessLogic.checkBloodPressureStatus(88,87);
+    Assertions.assertEquals(BloodPressureConstants.PREHIGH,res);
+  }
+  @Test
+  void checkBPStatusisPREHIGH3(){
+    String res = BusinessLogic.checkBloodPressureStatus(111,85);
+    Assertions.assertEquals(BloodPressureConstants.PREHIGH,res);
+  }
+  @Test
+  void checkBPStatusisPREHIGH4(){
+    String res = BusinessLogic.checkBloodPressureStatus(122,55);
     Assertions.assertEquals(BloodPressureConstants.PREHIGH,res);
   }
   @Test
@@ -59,8 +84,18 @@ import org.springframework.boot.test.context.SpringBootTest;
     Assertions.assertEquals(BloodPressureConstants.HIGH,res);
   }
   @Test
+  void checkBPStatusisHIGH2(){
+    String res = BusinessLogic.checkBloodPressureStatus(110,95);
+    Assertions.assertEquals(BloodPressureConstants.HIGH,res);
+  }
+  @Test
+  void checkBPStatusisHIGH3(){
+    String res = BusinessLogic.checkBloodPressureStatus(123,95);
+    Assertions.assertEquals(BloodPressureConstants.HIGH,res);
+  }
+  @Test
   void checkBPStatusIncorrectData(){
     String res = BusinessLogic.checkBloodPressureStatus(80,95);
-    Assertions.assertEquals("Enter Values Again",res);
+    Assertions.assertEquals("Systolic Value must be greater than Diastolic",res);
   }
 }
