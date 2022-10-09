@@ -81,18 +81,14 @@ import org.springframework.boot.test.context.SpringBootTest;
   @Test
   void checkBPStatusisHIGH(){
     String res = BusinessLogic.checkBloodPressureStatus(150,95);
+    String res2 = BusinessLogic.checkBloodPressureStatus(110,95);
+    String res3 = BusinessLogic.checkBloodPressureStatus(123,95);
+
     Assertions.assertEquals(BloodPressureConstants.HIGH,res);
+    Assertions.assertEquals(BloodPressureConstants.HIGH,res2);
+    Assertions.assertEquals(BloodPressureConstants.HIGH,res3);
   }
-  @Test
-  void checkBPStatusisHIGH2(){
-    String res = BusinessLogic.checkBloodPressureStatus(110,95);
-    Assertions.assertEquals(BloodPressureConstants.HIGH,res);
-  }
-  @Test
-  void checkBPStatusisHIGH3(){
-    String res = BusinessLogic.checkBloodPressureStatus(123,95);
-    Assertions.assertEquals(BloodPressureConstants.HIGH,res);
-  }
+
   @Test
   void checkBPStatusIncorrectData(){
     String res = BusinessLogic.checkBloodPressureStatus(80,95);

@@ -16,6 +16,7 @@ public class BusinessLogic {
   }
   public static String checkBloodPressureStatus(int x, int y){
     String bpStatus = "";
+    //Highchart
     if(checkSystolicAndDiastolicIsInAllowedRange(x,y).equals("Values are In-Range !")){
       if(checkSystolicisAlwaysHigherThanDiastolic(x,y)) {
         //low
