@@ -16,7 +16,6 @@ public class BusinessLogic {
   }
   public static String checkBloodPressureStatus(int x, int y){
     String bpStatus = "";
-    //Highchart
     if(checkSystolicAndDiastolicIsInAllowedRange(x,y).equals("Values are In-Range !")){
       if(checkSystolicisAlwaysHigherThanDiastolic(x,y)) {
         //low
@@ -28,7 +27,7 @@ public class BusinessLogic {
           bpStatus = BloodPressureConstants.PREHIGH;  //CANT PUT 89 HERE need to check for greater than systolic value
         }
         //ideal
-        else if ((x >= 90 && x <= 119) && (y >= BloodPressureConstants.DIASTOLIC_MIN && y <= 59)) {
+          else if ((x >= 90 && x <= 119) && (y >= BloodPressureConstants.DIASTOLIC_MIN && y <= 59)) {
           bpStatus = BloodPressureConstants.IDEAL;
         } else if ((x >= 90 && x <= 119) && (y >= 60 && y <= 79)) {
           bpStatus = BloodPressureConstants.IDEAL;
