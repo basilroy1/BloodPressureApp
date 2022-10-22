@@ -12,4 +12,6 @@ public class BloodPressureConstants {
   public static final String HIGH = "High Blood Pressure !";
   public static final String INVALID_SYSTOLIC = "Invalid Systolic Value !";
   public static final String INVALID_DIASTOLIC = "Invalid Diastolic Value !";
+  public static final String ONLINE_GP = "Online GP";
+
 }
