@@ -62,7 +62,6 @@ public class MainView extends VerticalLayout {
   }
   public void calculateBPonClick(Button calculateBP,IntegerField systolicValue,IntegerField diastolicValue){
     calculateBP.addClickListener(click -> {
-
       String res = BusinessLogic.checkBloodPressureStatus(
           (systolicValue.getValue()),diastolicValue.getValue());
 

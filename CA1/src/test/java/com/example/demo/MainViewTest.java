@@ -16,6 +16,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
+import org.mockito.Answers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -24,15 +25,18 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 @ExtendWith(MockitoExtension.class)
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
 class MainViewTest {
   @Mock
-  //@InjectMocks
   private MainView mainView3;
   @Mock
   private MainView mainView;
+  @Mock
+  private BusinessLogic businessLogic;
   private IntegerField systolicVal;
   private IntegerField diastolicVal;
   private String res;
@@ -121,11 +125,21 @@ class MainViewTest {
 
     Button button = new Button();
     new MainView();
-    MainView mainView3;
-    mainView3 = Mockito.mock(MainView.class);
-    MainView finalMainView = mainView3;
+    //MainView mainView3;
+    //mainView3 = Mockito.mock(MainView.class);
+    //MainView finalMainView = mainView3;
+
+    /*AtomicReference<MainView> savedContactRef = new AtomicReference<MainView>(null);
+    button.addClickListener( e -> {
+      savedContactRef.get().calculateBPonClick(button,systolicVal,diastolicVal);
+    });*/
+
+    String res = businessLogic.checkBloodPressureStatus(80,60);
     button.addClickListener(e -> {
-      button.click();
+      mainView.calculateBPonClick(button,systolicVal,diastolicVal);
+
+      //button.click();
+     // Mockito.verify(finalMainView).notificationPopUp(Mockito.any(),Mockito.any(),Mockito.any());
       //finalMainView.calculateBPonClick(button,systolicVal,diastolicVal);
       //Mockito.when(mainView.calculateBPonClick()).thenReturn("er");
        //res = BusinessLogic.checkBloodPressureStatus(
@@ -133,10 +147,13 @@ class MainViewTest {
       //mainView.notificationPopUp(systolicVal,diastolicVal,res);
       //mainView.onlineGPAdvice(systolicVal,diastolicVal,res);
     });
+    button.click();
     //button.click();
+    //Mockito.verify(businessLogic);
+    //BusinessLogic.checkBloodPressureStatus(Mockito.anyInt(),Mockito.anyInt());
+    //Mockito.verify(mainView,Mockito.atLeastOnce()).notificationPopUp(Mockito.any(),Mockito.any(),Mockito.anyString());
 
-    Mockito.verify(finalMainView).notificationPopUp(Mockito.any(),Mockito.any(),Mockito.any());
-    //Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
+    Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
 
   }
 }
