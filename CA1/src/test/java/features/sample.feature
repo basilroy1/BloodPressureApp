@@ -8,6 +8,6 @@ Feature: Blood Pressure
     Examples:
         | systolic value  | diastolic value | status |
         |   80            |      70         |   LOW  |
-        |                 |                 |        |
+        |    40           |    50           |    INVALID    |
 
 

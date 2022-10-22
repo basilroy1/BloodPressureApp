@@ -67,7 +67,6 @@ public class MainView extends VerticalLayout {
 
      String res = BusinessLogic.checkBloodPressureStatus(
          (systolicValue.getValue()),diastolicValue.getValue());
-      //add(new Hr());
 
      Notification notification = Notification.show(systolicValue.getValue()+ " / " +diastolicValue.getValue()+ " , "+res,7000, Notification.Position.MIDDLE);
       switch (res) {
