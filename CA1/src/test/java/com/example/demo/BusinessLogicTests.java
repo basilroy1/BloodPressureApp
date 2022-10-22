@@ -29,8 +29,18 @@ import org.springframework.boot.test.context.SpringBootTest;
     Assertions.assertEquals(BloodPressureConstants.INVALID_SYSTOLIC,res);
   }
   @Test
+  void checkInValidSystolicRange2(){
+    String res = BusinessLogic.checkSystolicAndDiastolicIsInAllowedRange(200,80);
+    Assertions.assertEquals(BloodPressureConstants.INVALID_SYSTOLIC,res);
+  }
+  @Test
   void checkInValidDiastolicRange(){
     String res = BusinessLogic.checkSystolicAndDiastolicIsInAllowedRange(75,130);
+    Assertions.assertEquals(BloodPressureConstants.INVALID_DIASTOLIC,res);
+  }
+  @Test
+  void checkInValidDiastolicRange2(){
+    String res = BusinessLogic.checkSystolicAndDiastolicIsInAllowedRange(75,30);
     Assertions.assertEquals(BloodPressureConstants.INVALID_DIASTOLIC,res);
   }
   @Test

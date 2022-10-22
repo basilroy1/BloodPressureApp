@@ -1,7 +1,7 @@
 package com.example.demo;
 
 public class BusinessLogic {
-  public BusinessLogic(){}
+  private BusinessLogic(){}
   public static boolean checkSystolicisAlwaysHigherThanDiastolic(int x, int y) {
     return x > y;
   }
