@@ -49,6 +49,16 @@ import org.springframework.boot.test.context.SpringBootTest;
     Assertions.assertEquals("Values are In-Range !",res);
   }
   @Test
+  void specialTest(){
+    String res = BusinessLogic.checkBloodPressureStatus(70,40);
+    Assertions.assertEquals(BloodPressureConstants.LOW,res);
+  }
+  @Test
+  void specialTest2(){
+    String res = BusinessLogic.checkBloodPressureStatus(89,59);
+    Assertions.assertEquals(BloodPressureConstants.LOW,res);
+  }
+  @Test
   void checkBPStatusisLOW(){
     String res = BusinessLogic.checkBloodPressureStatus(80,50);
     Assertions.assertEquals(BloodPressureConstants.LOW,res);

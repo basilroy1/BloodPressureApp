@@ -16,7 +16,7 @@ public class BusinessLogic {
   }
   public static String checkBloodPressureStatus(int x, int y){
     String bpStatus = "";
-    if(checkSystolicAndDiastolicIsInAllowedRange(x,y).equals("Values are In-Range !")){
+    if(checkSystolicAndDiastolicIsInAllowedRange(x,y).equals("Values are In-Range !")) {
       if(checkSystolicisAlwaysHigherThanDiastolic(x,y)) {
         //low
         if ((x >= BloodPressureConstants.SYSTOLIC_MIN && x <= 89) && (y >= BloodPressureConstants.DIASTOLIC_MIN && y <= 59)) {
