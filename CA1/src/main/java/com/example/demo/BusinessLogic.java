@@ -19,7 +19,7 @@ public class BusinessLogic {
     if(checkSystolicAndDiastolicIsInAllowedRange(x,y).equals("Values are In-Range !")) {
       if(checkSystolicisAlwaysHigherThanDiastolic(x,y)) {
         //low
-        if ((x >= BloodPressureConstants.SYSTOLIC_MIN && x <= 89) && (y >= BloodPressureConstants.DIASTOLIC_MIN && y <= 59)) {
+        if ((x <= 89) && (y <= 59)) {
           bpStatus = BloodPressureConstants.LOW;
         } else if ((x >= BloodPressureConstants.SYSTOLIC_MIN && x <= 89) && (y >= 60 && y <= 79)) {
           bpStatus = BloodPressureConstants.IDEAL;
