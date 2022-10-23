@@ -119,34 +119,11 @@ class MainViewTest {
 
     Button button = new Button();
     new MainView();
-    //MainView mainView3;
-    //mainView3 = Mockito.mock(MainView.class);
-    //MainView finalMainView = mainView3;
-
-    /*AtomicReference<MainView> savedContactRef = new AtomicReference<MainView>(null);
-    button.addClickListener( e -> {
-      savedContactRef.get().calculateBPonClick(button,systolicVal,diastolicVal);
-    });*/
-
     String res = businessLogic.checkBloodPressureStatus(80,60);
     button.addClickListener(e -> {
       mainView.calculateBPonClick(button,systolicVal,diastolicVal);
-
-      //button.click();
-     // Mockito.verify(finalMainView).notificationPopUp(Mockito.any(),Mockito.any(),Mockito.any());
-      //finalMainView.calculateBPonClick(button,systolicVal,diastolicVal);
-      //Mockito.when(mainView.calculateBPonClick()).thenReturn("er");
-       //res = BusinessLogic.checkBloodPressureStatus(
-         // (systolicVal.getValue()),diastolicVal.getValue())
-      //mainView.notificationPopUp(systolicVal,diastolicVal,res);
-      //mainView.onlineGPAdvice(systolicVal,diastolicVal,res);
     });
     button.click();
-    //button.click();
-    //Mockito.verify(businessLogic);
-    //BusinessLogic.checkBloodPressureStatus(Mockito.anyInt(),Mockito.anyInt());
-    //Mockito.verify(mainView,Mockito.atLeastOnce()).notificationPopUp(Mockito.any(),Mockito.any(),Mockito.anyString());
-
     Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
 
   }
