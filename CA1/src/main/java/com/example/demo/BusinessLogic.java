@@ -45,7 +45,7 @@ public class BusinessLogic {
           bpStatus = BloodPressureConstants.HIGH;
         }
         //high
-        else if ((x >= 140 && x <= BloodPressureConstants.SYSTOLIC_MAX)) {
+        else if (x >= 140) {
           bpStatus = BloodPressureConstants.HIGH;
         }
       } else {
