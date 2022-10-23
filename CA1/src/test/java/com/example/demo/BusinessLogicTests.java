@@ -48,16 +48,6 @@ import org.springframework.boot.test.context.SpringBootTest;
     String res = BusinessLogic.checkSystolicAndDiastolicIsInAllowedRange(75,90);
     Assertions.assertEquals("Values are In-Range !",res);
   }
-  /*@Test
-  void specialTest(){
-    String res = BusinessLogic.checkBloodPressureStatus(70,40);
-    Assertions.assertEquals(BloodPressureConstants.LOW,res);
-  }
-  @Test
-  void specialTest2(){
-    String res = BusinessLogic.checkBloodPressureStatus(89,59);
-    Assertions.assertEquals(BloodPressureConstants.INVALID_SYSTOLIC,res);
-  }*/
   @Test
   void checkBPStatusisLOW(){
     String res = BusinessLogic.checkBloodPressureStatus(80,50);
@@ -86,6 +76,11 @@ import org.springframework.boot.test.context.SpringBootTest;
   @Test
   void checkBPStatusisIDEALSpecial2(){
     String res = BusinessLogic.checkBloodPressureStatus(89,60);
+    Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
+  }
+  @Test
+  void checkBPStatusisIDEALSpecial3(){
+    String res = BusinessLogic.checkBloodPressureStatus(90,60);
     Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
   }
   @Test
