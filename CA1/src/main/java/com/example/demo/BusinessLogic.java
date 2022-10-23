@@ -16,37 +16,34 @@ public class BusinessLogic {
   }
   public static String checkBloodPressureStatus(int x, int y){
     String bpStatus = "";
-    //Highchart
-    if(checkSystolicAndDiastolicIsInAllowedRange(x,y).equals("Values are In-Range !")){
+    if(checkSystolicAndDiastolicIsInAllowedRange(x,y).equals("Values are In-Range !")) {
       if(checkSystolicisAlwaysHigherThanDiastolic(x,y)) {
         //low
-        if ((x >= BloodPressureConstants.SYSTOLIC_MIN && x <= 89) && (y >= BloodPressureConstants.DIASTOLIC_MIN && y <= 59)) {
+        if ((x <= 89) && (y <= 59)) {
           bpStatus = BloodPressureConstants.LOW;
-        } else if ((x >= BloodPressureConstants.SYSTOLIC_MIN && x <= 89) && (y >= 60 && y <= 79)) {
+        } else if ((x <= 89) && (y >= 60 && y <= 79)) {
           bpStatus = BloodPressureConstants.IDEAL;
-        } else if ((x >= BloodPressureConstants.SYSTOLIC_MIN && x <= 89) && (y >= 80 && y <= 88)) {
+        } else if ((x <= 89) && (y >= 80 && y <= 88)) {
           bpStatus = BloodPressureConstants.PREHIGH;  //CANT PUT 89 HERE need to check for greater than systolic value
         }
         //ideal
-        else if ((x >= 90 && x <= 119) && (y >= BloodPressureConstants.DIASTOLIC_MIN && y <= 59)) {
-          bpStatus = BloodPressureConstants.IDEAL;
-        } else if ((x >= 90 && x <= 119) && (y >= 60 && y <= 79)) {
+          else if ((x >= 90 && x <= 119) && ((y <= 59) || (y >= 60 && y <= 79))) {
           bpStatus = BloodPressureConstants.IDEAL;
         } else if ((x >= 90 && x <= 119) && (y >= 80 && y <= 89)) {
           bpStatus = BloodPressureConstants.PREHIGH;
-        } else if ((x >= 90 && x <= 119) && (y >= 90 && y <= BloodPressureConstants.DIASTOLIC_MAX)) {
+        } else if ((x >= 90 && x <= 119) && (y >= 90 )) {
           bpStatus = BloodPressureConstants.HIGH;
         }
         //prehigh
-        else if ((x >= 120 && x <= 139) && (y >= BloodPressureConstants.DIASTOLIC_MIN && y <= 59)) {
+          else if ((x >= 120 && x <= 139) && (y <= 59)) {
           bpStatus = BloodPressureConstants.PREHIGH;
         } else if ((x >= 120 && x <= 139) && (y >= 80 && y <= 89)) {
           bpStatus = BloodPressureConstants.PREHIGH;
-        } else if ((x >= 120 && x <= 139) && (y >= 90 && y <= BloodPressureConstants.DIASTOLIC_MAX)) {
+        } else if ((x >= 120 && x <= 139) && (y >= 90)) {
           bpStatus = BloodPressureConstants.HIGH;
         }
         //high
-        else if ((x >= 140 && x <= BloodPressureConstants.SYSTOLIC_MAX)) {
+          else if (x >= 140) {
           bpStatus = BloodPressureConstants.HIGH;
         }
       } else {
