@@ -69,21 +69,6 @@ import org.springframework.boot.test.context.SpringBootTest;
     Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
   }
   @Test
-  void checkBPStatusisIDEALSpecial(){
-    String res = BusinessLogic.checkBloodPressureStatus(90,59);
-    Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
-  }
-  @Test
-  void checkBPStatusisIDEALSpecial2(){
-    String res = BusinessLogic.checkBloodPressureStatus(89,60);
-    Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
-  }
-  @Test
-  void checkBPStatusisIDEALSpecial3(){
-    String res = BusinessLogic.checkBloodPressureStatus(90,60);
-    Assertions.assertEquals(BloodPressureConstants.IDEAL,res);
-  }
-  @Test
   void checkBPStatusisPREHIGH(){
     String res = BusinessLogic.checkBloodPressureStatus(130,85);
     Assertions.assertEquals(BloodPressureConstants.PREHIGH,res);

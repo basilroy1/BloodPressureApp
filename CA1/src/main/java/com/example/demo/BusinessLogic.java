@@ -27,9 +27,7 @@ public class BusinessLogic {
           bpStatus = BloodPressureConstants.PREHIGH;  //CANT PUT 89 HERE need to check for greater than systolic value
         }
         //ideal
-          else if ((x >= 90 && x <= 119) && (y <= 59)) {
-          bpStatus = BloodPressureConstants.IDEAL;
-        } else if ((x >= 90 && x <= 119) && (y >= 60 && y <= 79)) {
+          else if ((x >= 90 && x <= 119) && ((y <= 59) || (y >= 60 && y <= 79))) {
           bpStatus = BloodPressureConstants.IDEAL;
         } else if ((x >= 90 && x <= 119) && (y >= 80 && y <= 89)) {
           bpStatus = BloodPressureConstants.PREHIGH;
@@ -37,7 +35,7 @@ public class BusinessLogic {
           bpStatus = BloodPressureConstants.HIGH;
         }
         //prehigh
-        else if ((x >= 120 && x <= 139) && (y <= 59)) {
+          else if ((x >= 120 && x <= 139) && (y <= 59)) {
           bpStatus = BloodPressureConstants.PREHIGH;
         } else if ((x >= 120 && x <= 139) && (y >= 80 && y <= 89)) {
           bpStatus = BloodPressureConstants.PREHIGH;
@@ -45,7 +43,7 @@ public class BusinessLogic {
           bpStatus = BloodPressureConstants.HIGH;
         }
         //high
-        else if (x >= 140) {
+          else if (x >= 140) {
           bpStatus = BloodPressureConstants.HIGH;
         }
       } else {

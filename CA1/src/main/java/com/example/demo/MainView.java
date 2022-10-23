@@ -65,8 +65,8 @@ public class MainView extends VerticalLayout {
       String res = BusinessLogic.checkBloodPressureStatus(
           (systolicValue.getValue()),diastolicValue.getValue());
 
-      notificationPopUp(systolicValue,diastolicValue,res);
       onlineGPAdvice(systolicValue,diastolicValue,res);
+      notificationPopUp(systolicValue,diastolicValue,res);
     });
   }
   public void notificationPopUp(IntegerField systolicValue,IntegerField diastolicValue,String res){
