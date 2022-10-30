@@ -53,6 +53,7 @@ public class MainView extends VerticalLayout {
     Button calculateBP = new Button("Calculate BP");
     calculateBP.addThemeVariants(ButtonVariant.LUMO_ICON);
     calculateBP.getStyle().set("margin","auto");
+    calculateBP.setId("calculate-bp-btn");
 
     add(calculateBP);
     add(new Hr());
