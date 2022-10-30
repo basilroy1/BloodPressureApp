@@ -24,7 +24,8 @@ public class BusinessLogic {
         } else if ((x <= 89) && (y >= 60 && y <= 79)) {
           bpStatus = BloodPressureConstants.IDEAL;
         } else if ((x <= 89) && (y >= 80 && y <= 88)) {
-          bpStatus = BloodPressureConstants.PREHIGH;  //CANT PUT 89 HERE need to check for greater than systolic value
+          bpStatus = BloodPressureConstants.PREHIGH;
+          //CANT PUT 89 HERE need to check for greater than systolic value
         }
         //ideal
           else if ((x >= 90 && x <= 119) && ((y <= 59) || (y >= 60 && y <= 79))) {
