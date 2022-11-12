@@ -1,5 +1,6 @@
 Feature: Blood Pressure
 
+  @smoke
   Scenario Outline: What is my current Blood Pressure
     Given I am on BP calculate home page
     And I have entered my Systolic value of <systolic value> and my Diastolic value of <diastolic value>
