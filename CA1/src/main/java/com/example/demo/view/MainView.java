@@ -24,8 +24,8 @@ import java.time.ZoneOffset;
 import java.util.List;
 
 @PageTitle("BloodPressureCalculator")
-@Route("")
-//@Service
+@Route(value = "", layout = MainBodyLayout.class)
+
 public class MainView extends VerticalLayout {
 
   public MainView() {
