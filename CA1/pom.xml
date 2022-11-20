@@ -24,11 +24,7 @@
     <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>  
     <sonar.language>java</sonar.language> 
   </properties>  
-  <dependencies> 
-    <dependency> 
-      <groupId>com.vaadin</groupId>  
-      <artifactId>vaadin-spring-boot-starter</artifactId> 
-    </dependency>  
+  <dependencies>
     <dependency> 
       <groupId>org.junit.jupiter</groupId>  
       <artifactId>junit-jupiter</artifactId>  
@@ -120,11 +116,6 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.vaadin</groupId>
