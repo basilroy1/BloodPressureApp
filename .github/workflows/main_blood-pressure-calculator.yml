@@ -24,18 +24,18 @@ jobs:
       - name: Build with Maven
         run: mvn clean install --file ./CA1/
           
-      #- name: Azure Login
-        #uses: azure/login@v1
-        #with:
-          #creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           
       - name: Build Vaadin with Maven 
         run: mvn package -Pproduction --file ./CA1/
       
-      #- name: Configure App with Maven 
-        #uses: azure/login@v1
-        #with:
-          #creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Configure App with Maven 
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
              
       
       - name: Deploy using Maven
