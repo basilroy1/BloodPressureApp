@@ -22,17 +22,6 @@ import java.util.Optional;
 public class AppNavItem extends Component {
 
   /**
-   * Creates a menu item which does not link to any view but only shows the given
-   * label.
-   *
-   * @param label
-   *            the label for the item
-   */
-  public AppNavItem(String label) {
-    setLabel(label);
-  }
-
-  /**
    * Creates a new menu item using the given label that links to the given path.
    *
    * @param label
@@ -144,34 +133,6 @@ public class AppNavItem extends Component {
   }
 
   /**
-   * Removes the given menu item from this item.
-   * <p>
-   * If the given menu item is not a child of this menu item, does nothing.
-   *
-   * @param appNavItem
-   *            the menu item to remove
-   * @return this item for chaining
-   */
-  public AppNavItem removeItem(AppNavItem appNavItem) {
-    Optional<Component> parent = appNavItem.getParent();
-    if (parent.isPresent() && parent.get() == this) {
-      getElement().removeChild(appNavItem.getElement());
-    }
-
-    return this;
-  }
-
-  /**
-   * Removes all menu items from this item.
-   *
-   * @return this item for chaining
-   */
-  public AppNavItem removeAllItems() {
-    getElement().removeAllChildren();
-    return this;
-  }
-
-  /**
    * Gets the label for the item.
    *
    * @return the label or null if no label has been set
@@ -247,10 +208,6 @@ public class AppNavItem extends Component {
     return router;
   }
 
-  public String getPath() {
-    return getElement().getAttribute("path");
-  }
-
   private int getIconElementIndex() {
     for (int i = 0; i < getElement().getChildCount(); i++) {
       if ("prefix".equals(getElement().getChild(i).getAttribute("slot"))) {
@@ -293,21 +250,6 @@ public class AppNavItem extends Component {
     Span icon = new Span();
     icon.setClassName(iconClass);
     setIcon(icon);
-    return this;
-  }
-
-  /**
-   * Sets the expanded status of the item.
-   *
-   * @param value
-   *            true to expand the item, false to collapse it
-   */
-  public AppNavItem setExpanded(boolean value) {
-    if (value) {
-      getElement().setAttribute("expanded", "");
-    } else {
-      getElement().removeAttribute("expanded");
-    }
     return this;
   }
 
