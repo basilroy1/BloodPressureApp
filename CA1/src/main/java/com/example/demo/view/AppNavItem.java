@@ -4,7 +4,6 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.internal.StateTree;
 import com.vaadin.flow.router.RouteConfiguration;
@@ -22,19 +21,6 @@ import java.util.Optional;
 public class AppNavItem extends Component {
 
   /**
-   * Creates a new menu item using the given label that links to the given path.
-   *
-   * @param label
-   *            the label for the item
-   * @param path
-   *            the path to link to
-   */
-  public AppNavItem(String label, String path) {
-    setPath(path);
-    setLabel(label);
-  }
-
-  /**
    * Creates a new menu item using the given label that links to the given view.
    *
    * @param label
@@ -45,75 +31,6 @@ public class AppNavItem extends Component {
   public AppNavItem(String label, Class<? extends Component> view) {
     setPath(view);
     setLabel(label);
-  }
-
-  /**
-   * Creates a new menu item using the given label and icon that links to the
-   * given path.
-   *
-   * @param label
-   *            the label for the item
-   * @param path
-   *            the path to link to
-   * @param icon
-   *            the icon for the item
-   */
-  public AppNavItem(String label, String path, Icon icon) {
-    setPath(path);
-    setLabel(label);
-    setIcon(icon);
-  }
-
-  /**
-   * Creates a new menu item using the given label that links to the given view.
-   *
-   * @param label
-   *            the label for the item
-   * @param view
-   *            the view to link to
-   * @param icon
-   *            the icon for the item
-   */
-  public AppNavItem(String label, Class<? extends Component> view, Icon icon) {
-    setPath(view);
-    setLabel(label);
-    setIcon(icon);
-  }
-
-  /**
-   * Creates a new menu item using the given label and icon that links to the
-   * given path.
-   *
-   * @param label
-   *            the label for the item
-   * @param path
-   *            the path to link to
-   * @param iconClass
-   *            the CSS class to use for showing the icon
-   */
-  public AppNavItem(String label, String path, String iconClass) {
-    setPath(path);
-    setLabel(label);
-
-    setIconClass(iconClass);
-  }
-
-  /**
-   * Creates a new menu item using the given label and icon that links to the
-   * given path.
-   *
-   * @param label
-   *            the label for the item
-   * @param view
-   *            the view to link to
-   * @param iconClass
-   *            the CSS class to use for showing the icon
-   */
-  public AppNavItem(String label, Class<? extends Component> view, String iconClass) {
-    setPath(view);
-    setLabel(label);
-
-    setIconClass(iconClass);
   }
 
   /**
