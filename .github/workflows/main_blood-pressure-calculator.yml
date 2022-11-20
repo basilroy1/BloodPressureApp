@@ -37,16 +37,15 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
              
+      
+      - name: Deploy using Maven
+        run: mvn azure-webapp:deploy --file ./CA1/
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: java-app
           path: '${{ github.workspace }}/CA1/target/*.jar'
-      
-      - name: Deploy using Maven
-        run: mvn azure-webapp:deploy --file ./CA1/
-
-    
 
   #deploy:
     #runs-on: ubuntu-latest
