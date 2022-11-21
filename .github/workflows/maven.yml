@@ -29,7 +29,7 @@ jobs:
     - name: Maven Build
       run: mvn clean install -DskipTests --file ./CA1/
 
-    - name: Run Tests
+    - name: Run Unit & Acceptance Tests
       run: mvn test --file ./CA1/
 
     - name: Cache SonarCloud packages
