@@ -5,8 +5,6 @@ import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.dom.Element;
-import java.util.Optional;
 
 /**
  * A navigation menu with support for hierarchical and flat menus.

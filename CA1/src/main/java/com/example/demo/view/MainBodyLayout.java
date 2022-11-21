@@ -12,6 +12,7 @@ public class MainBodyLayout extends AppLayout {
 
     nav.addItem(new AppNavItem("", MainView.class));
 
+
     return nav;
   }
 }
