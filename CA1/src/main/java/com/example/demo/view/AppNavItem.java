@@ -5,10 +5,6 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.internal.StateTree;
-import com.vaadin.flow.router.RouteConfiguration;
-import com.vaadin.flow.router.Router;
-import com.vaadin.flow.server.VaadinService;
 import java.util.Optional;
 
 /**
@@ -29,7 +25,6 @@ public class AppNavItem extends Component {
    *            the view to link to
    */
   public AppNavItem(String label, Class<? extends Component> view) {
-    //setPath(view);
     setLabel(label);
   }
 
@@ -83,47 +78,6 @@ public class AppNavItem extends Component {
       return element;
     });
   }
-
-  /**
-   * Sets the path this item links to.
-   *
-   * @param path
-   *            the path to link to
-   * @return this instance for chaining
-   */
-  /* AppNavItem setPath(String path) {
-    getElement().setAttribute("path", path);
-    return this;
-  }*/
-
-  /**
-   * Sets the view this item links to.
-   *
-   * @param view
-   *            the view to link to
-   * @return this instance for chaining
-   */
-  /*public AppNavItem setPath(Class<? extends Component> view) {
-    String url = RouteConfiguration.forRegistry(getRouter().getRegistry()).getUrl(view);
-    setPath(url);
-    return this;
-  }
-
-  private Router getRouter() {
-    Router router = null;
-    if (getElement().getNode().isAttached()) {
-      StateTree tree = (StateTree) getElement().getNode().getOwner();
-      router = tree.getUI().getInternals().getRouter();
-    }
-    if (router == null) {
-      router = VaadinService.getCurrent().getRouter();
-    }
-    if (router == null) {
-      throw new IllegalStateException("Implicit router instance is not available. "
-          + "Use overloaded method with explicit router parameter.");
-    }
-    return router;
-  }*/
 
   private int getIconElementIndex() {
     for (int i = 0; i < getElement().getChildCount(); i++) {

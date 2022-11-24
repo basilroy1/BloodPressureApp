@@ -22,18 +22,16 @@ import org.springframework.boot.test.context.SpringBootTest;
  class BusinessLogicTests {
   @InjectMocks
   private BusinessLogic businessLogic;
-//@InjectMocks
-  //private AppNavItem appNavItem;
-@Mock
-private MainBodyLayout mainBodyLayout;
-@Mock
-private AppNav appNav;
+
+  @Mock
+  private MainBodyLayout mainBodyLayout;
   @Test
   void testAppNavComponents(){
-
     AppNavItem d = new AppNavItem("rest", MainView.class);
-    AppNavItem d1 = new AppNavItem("rest", MainView.class);
+    AppNavItem d1 = new AppNavItem("rest2", MainView.class);
     AppNav appNav = new AppNav();
+    MainBodyLayout mainBodyLayout = new MainBodyLayout();
+    mainBodyLayout.createNavigation();
 
     appNav.addItem(d);
     d.getLabel();
@@ -41,12 +39,7 @@ private AppNav appNav;
     d.addItem(d1);
 
     Assertions.assertEquals("rest", d.getLabel());
-
-    mainBodyLayout.createNavigation();
-    Mockito.verify(mainBodyLayout).createNavigation();
-
-
-
+    Assertions.assertNotNull(d);
 }
   @Test
   void checkifSystolicisGreater(){

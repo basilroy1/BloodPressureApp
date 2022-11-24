@@ -31,7 +31,7 @@ public class MainView extends VerticalLayout {
   public MainView() {
 
     H1 header = new H1("Blood Pressure Calculator");
-    header.getStyle().set("margin","auto");
+    header.getStyle().set(BloodPressureConstants.MARGIN,"auto");
     header.getStyle().set("color","orange");
     add(header);
 
@@ -50,12 +50,12 @@ public class MainView extends VerticalLayout {
 
     HorizontalLayout horizontalLayout = new HorizontalLayout(systolicValue,diastolicValue);
     horizontalLayout.setDefaultVerticalComponentAlignment(Alignment.CENTER);
-    horizontalLayout.getStyle().set("margin","auto");
+    horizontalLayout.getStyle().set(BloodPressureConstants.MARGIN,"auto");
     add(horizontalLayout);
 
     Button calculateBP = new Button("Calculate BP");
     calculateBP.addThemeVariants(ButtonVariant.LUMO_ICON);
-    calculateBP.getStyle().set("margin","auto");
+    calculateBP.getStyle().set(BloodPressureConstants.MARGIN,"auto");
     calculateBP.setId("calculate-bp-btn");
 
     add(calculateBP);

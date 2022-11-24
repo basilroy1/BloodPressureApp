@@ -19,6 +19,7 @@ public class AppNav extends Component {
    * Creates a new menu without any label.
    */
   public AppNav() {
+    // TODO document why this constructor is empty
   }
 
   /**
