@@ -2,12 +2,18 @@ package com.example.demo;
 
 import com.example.demo.businesslogic.BusinessLogic;
 import com.example.demo.constants.BloodPressureConstants;
+import com.example.demo.view.AppNav;
+import com.example.demo.view.AppNavItem;
+import com.example.demo.view.MainBodyLayout;
+import com.example.demo.view.MainView;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -16,7 +22,32 @@ import org.springframework.boot.test.context.SpringBootTest;
  class BusinessLogicTests {
   @InjectMocks
   private BusinessLogic businessLogic;
+//@InjectMocks
+  //private AppNavItem appNavItem;
+@Mock
+private MainBodyLayout mainBodyLayout;
+@Mock
+private AppNav appNav;
+  @Test
+  void testAppNavComponents(){
 
+    AppNavItem d = new AppNavItem("rest", MainView.class);
+    AppNavItem d1 = new AppNavItem("rest", MainView.class);
+    AppNav appNav = new AppNav();
+
+    appNav.addItem(d);
+    d.getLabel();
+    d.setIconClass("la la-globe");
+    d.addItem(d1);
+
+    Assertions.assertEquals("rest", d.getLabel());
+
+    mainBodyLayout.createNavigation();
+    Mockito.verify(mainBodyLayout).createNavigation();
+
+
+
+}
   @Test
   void checkifSystolicisGreater(){
     Assertions.assertTrue(BusinessLogic.checkSystolicisAlwaysHigherThanDiastolic(90,80));

@@ -7,12 +7,10 @@ public class MainBodyLayout extends AppLayout {
     createNavigation();
   }
 
-  private AppNav createNavigation() {
+  public void createNavigation() {
     AppNav nav = new AppNav();
 
     nav.addItem(new AppNavItem("", MainView.class));
 
-
-    return nav;
   }
 }

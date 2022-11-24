@@ -29,7 +29,7 @@ public class AppNavItem extends Component {
    *            the view to link to
    */
   public AppNavItem(String label, Class<? extends Component> view) {
-    setPath(view);
+    //setPath(view);
     setLabel(label);
   }
 
@@ -55,7 +55,7 @@ public class AppNavItem extends Component {
    * @return the label or null if no label has been set
    */
   public String getLabel() {
-    return getExistingLabelElement().map(e -> e.getText()).orElse(null);
+    return getExistingLabelElement().map(Element::getText).orElse(null);
   }
 
   /**
@@ -91,10 +91,10 @@ public class AppNavItem extends Component {
    *            the path to link to
    * @return this instance for chaining
    */
-  public AppNavItem setPath(String path) {
+  /* AppNavItem setPath(String path) {
     getElement().setAttribute("path", path);
     return this;
-  }
+  }*/
 
   /**
    * Sets the view this item links to.
@@ -103,7 +103,7 @@ public class AppNavItem extends Component {
    *            the view to link to
    * @return this instance for chaining
    */
-  public AppNavItem setPath(Class<? extends Component> view) {
+  /*public AppNavItem setPath(Class<? extends Component> view) {
     String url = RouteConfiguration.forRegistry(getRouter().getRegistry()).getUrl(view);
     setPath(url);
     return this;
@@ -123,7 +123,7 @@ public class AppNavItem extends Component {
           + "Use overloaded method with explicit router parameter.");
     }
     return router;
-  }
+  }*/
 
   private int getIconElementIndex() {
     for (int i = 0; i < getElement().getChildCount(); i++) {

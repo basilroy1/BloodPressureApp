@@ -1,8 +1,6 @@
 package com.example.demo.view;
 
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.HasSize;
-import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 
@@ -15,7 +13,7 @@ import com.vaadin.flow.component.dependency.JsModule;
  */
 @JsModule("@vaadin-component-factory/vcf-nav")
 @Tag("vcf-nav")
-public class AppNav extends Component implements HasSize, HasStyle {
+public class AppNav extends Component {
 
   /**
    * Creates a new menu without any label.
