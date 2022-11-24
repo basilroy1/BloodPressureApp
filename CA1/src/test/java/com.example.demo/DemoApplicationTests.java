@@ -12,5 +12,6 @@ class DemoApplicationTests {
 	@Test
 	void applicationStarts() {
 		DemoApplication.main(new String[]{});
+		assert true;
 	}
 }

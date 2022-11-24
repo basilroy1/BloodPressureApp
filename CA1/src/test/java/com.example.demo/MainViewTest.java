@@ -97,15 +97,6 @@ class MainViewTest {
 
     Assertions.assertEquals(BloodPressureConstants.INVALID_DIASTOLIC,res);
   }
-  @Test
-  void notificationPopUpTestLOW(){
-
-   //mainView.notificationPopUp(systolicVal,diastolicVal,res);
-   //notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
-    //Assertions.assertEquals(notification.getThemeName(),"LUMO_SUCCESS");
-
-    //Assertions.assertEquals(Notification.show());
-  }
 
   @Test
   void calculateBP(){
