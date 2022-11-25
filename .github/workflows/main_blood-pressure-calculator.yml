@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'QA'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
@@ -68,7 +68,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'blood-pressure-calculator'
-          slot-name: 'Production'
+          slot-name: 'QA'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_06A4C5DBBA3043C1A21D7E050CB29B88 }}
           package: '*.jar'
           
