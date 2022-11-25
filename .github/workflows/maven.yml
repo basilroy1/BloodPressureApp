@@ -17,14 +17,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+        fetch-depth: 0
 
     - name: Set up JDK 11
       uses: actions/setup-java@v1
       with:
         java-version: '11'
-        distribution: 'temurin'
-        cache: maven
+        #distribution: 'temurin'
+        #cache: maven
 
     - name: Maven Build
       run: mvn clean install -DskipTests --file ./CA1/
@@ -52,22 +52,22 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: mvn -B verify --file ./CA1/ org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=basilroy1_BloodPressureApp
     
-    - name: Checkout
-      uses: actions/checkout@v2
+    #- name: Checkout
+      #uses: actions/checkout@v2
 
-    - name: Dependency Check
-      uses: dependency-check/Dependency-Check_Action@main
-      id: Depcheck
-      with:
-        project: 'Blood Pressure Calculator'
-        path: '.'
-        format: 'HTML'    
-        args: >
-          --failOnCVSS 8
+    #- name: Dependency Check
+      #uses: dependency-check/Dependency-Check_Action@main
+      #id: Depcheck
+      #with:
+        #project: 'Blood Pressure Calculator'
+        #path: '.'
+        #format: 'HTML'    
+        #args: >
+          #--failOnCVSS 8
           
-    - name: Upload Test results
-      uses: actions/upload-artifact@master
-      with:
-         name: Depcheck report
-         path: ${{github.workspace}}/reports
+    #- name: Upload Test results
+      #uses: actions/upload-artifact@master
+      #with:
+         #name: Depcheck report
+         #path: ${{github.workspace}}/reports
     
