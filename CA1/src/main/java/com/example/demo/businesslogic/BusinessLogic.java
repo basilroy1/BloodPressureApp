@@ -38,9 +38,7 @@ public class BusinessLogic {
           bpStatus = BloodPressureConstants.HIGH;
         }
         //prehigh
-          else if ((x >= 120 && x <= 139) && (y <= 59)) {
-          bpStatus = BloodPressureConstants.PREHIGH;
-        } else if ((x >= 120 && x <= 139) && (y >= 80 && y <= 89)) {
+         else if (x >= 120 && x <= 139 && y <= 89) {
           bpStatus = BloodPressureConstants.PREHIGH;
         } else if ((x >= 120 && x <= 139) && (y >= 90)) {
           bpStatus = BloodPressureConstants.HIGH;
