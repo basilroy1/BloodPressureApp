@@ -12,9 +12,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
-      - name: Run Npm Install
-        run: npm install
       
       - name: Dependency Check
         uses: dependency-check/Dependency-Check_Action@main
@@ -25,7 +22,6 @@ jobs:
           format: 'HTML'    
           args: >
             --failOnCVSS 8            
-          # fail if CVSS score (CVE scoring system) is High >=8
           
       - name: Upload Test results
         uses: actions/upload-artifact@master
