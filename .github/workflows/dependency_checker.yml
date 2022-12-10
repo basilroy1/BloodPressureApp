@@ -18,7 +18,7 @@ jobs:
         id: Depcheck
         with:
           project: 'Blood Pressure Calculator'
-          path: '.'
+          path: './CA1/'
           format: 'HTML'    
           args: >
             --failOnCVSS 8            
